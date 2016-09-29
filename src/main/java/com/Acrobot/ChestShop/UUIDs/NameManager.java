@@ -38,7 +38,7 @@ public class NameManager {
         return currentShortName.get(player.getUniqueId());
     }
 
-    public static String getFullNameFor(UUID playerId) {
+    public static String getLastSeenName(UUID playerId) {
         if (isAdminShop(playerId)) {
             return Properties.ADMIN_SHOP_NAME;
         }
@@ -48,7 +48,15 @@ public class NameManager {
         return lastSeenFullName.get(playerId);
     }
 
-    public static UUID getUUIDFor(String shortName) {
+    public static String getUsername(UUID playerId) {
+        return getLastSeenName(playerId);
+    }
+
+    public static String getFullUsername(String shortName) {
+        return getLastSeenName(getUUID(shortName));
+    }
+
+    public static UUID getUUID(String shortName) {
         if (Properties.ADMIN_SHOP_NAME.equalsIgnoreCase(shortName)) {
             return adminShopUUID;
         }

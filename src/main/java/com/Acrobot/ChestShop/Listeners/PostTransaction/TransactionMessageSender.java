@@ -34,7 +34,7 @@ public class TransactionMessageSender implements Listener {
 
     protected static void sendBuyMessage(TransactionEvent event) {
         String itemName = parseItemInformation(event.getStock());
-        String owner = NameManager.getFullNameFor(event.getOwner().getUniqueId());
+        String owner = NameManager.getLastSeenName(event.getOwner().getUniqueId());
 
         Player player = event.getClient();
 
@@ -57,7 +57,7 @@ public class TransactionMessageSender implements Listener {
 
     protected static void sendSellMessage(TransactionEvent event) {
         String itemName = parseItemInformation(event.getStock());
-        String owner = NameManager.getFullNameFor(event.getOwner().getUniqueId());
+        String owner = NameManager.getLastSeenName(event.getOwner().getUniqueId());
 
         Player player = event.getClient();
 

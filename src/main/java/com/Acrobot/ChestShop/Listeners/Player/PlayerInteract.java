@@ -125,7 +125,7 @@ public class PlayerInteract implements Listener {
         String prices = sign.getLine(PRICE_LINE);
         String material = sign.getLine(ITEM_LINE);
 
-        UUID uuid = NameManager.getUUIDFor(name);
+        UUID uuid = NameManager.getUUID(name);
 
         if (uuid == null) {
             return null;

@@ -79,7 +79,7 @@ public class Security {
                 continue;
             }
 
-            UUID existingSignUUID = NameManager.getUUIDFor(sign.getLine(ChestShopSign.NAME_LINE));
+            UUID existingSignUUID = NameManager.getUUID(sign.getLine(ChestShopSign.NAME_LINE));
             if (existingSignUUID == null || !existingSignUUID.equals(player.getUniqueId())) {
                 return true;
             }

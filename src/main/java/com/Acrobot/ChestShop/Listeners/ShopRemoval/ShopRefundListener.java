@@ -32,7 +32,7 @@ public class ShopRefundListener implements Listener {
             return;
         }
 
-        UUID owner = NameManager.getUUIDFor(event.getSign().getLine(NAME_LINE));
+        UUID owner = NameManager.getUUID(event.getSign().getLine(NAME_LINE));
 
         CurrencyAddEvent currencyEvent = new CurrencyAddEvent(BigDecimal.valueOf(refundPrice), owner, event.getSign().getWorld());
         ChestShop.callEvent(currencyEvent);

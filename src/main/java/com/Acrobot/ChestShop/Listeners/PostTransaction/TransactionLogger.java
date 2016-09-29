@@ -33,7 +33,7 @@ public class TransactionLogger implements Listener {
                     items.append(item.getAmount()).append(' ').append(getSignName(item));
                 }
 
-                String message = String.format(template, event.getClient().getUniqueId().toString(), event.getClient().getName(), items.toString(), event.getPrice(), event.getOwner().getUniqueId().toString(), NameManager.getFullNameFor(event.getOwner().getUniqueId()),
+                String message = String.format(template, event.getClient().getUniqueId().toString(), event.getClient().getName(), items.toString(), event.getPrice(), event.getOwner().getUniqueId().toString(), NameManager.getLastSeenName(event.getOwner().getUniqueId()),
                         LocationUtil.locationToString(event.getSign().getLocation()));
 
                 ChestShop.getBukkitLogger().info(message);
